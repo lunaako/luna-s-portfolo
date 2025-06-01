@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Planr",
+    "category": "Web design",
+    "description": "AI-powered planning tool inspired by Trello with OpenAI integration",
+    "technologies": ["React", "Redux", "Flask", "PostgreSQL", "OpenAI API", "React DnD"],
+    "image": "images/planr.jpg",
+    "websiteUrl": "https://planr-xo3n.onrender.com/"
+  },
+  {
+    "id": 2,
+    "title": "Flask of Joe",
+    "category": "Web design",
+    "description": "Full-stack coffee e-commerce platform with shopping cart and AWS integration",
+    "technologies": ["React", "Redux", "Flask", "PostgreSQL", "AWS S3", "SQLAlchemy"],
+    "image": "images/flask-of-joe.jpg",
+    "websiteUrl": "https://flask-of-joe.onrender.com/"
+  },
+  {
+    "id": 3,
+    "title": "WoofBnB",
+    "category": "Web design",
+    "description": "Dog hotel booking platform inspired by Airbnb with booking management",
+    "technologies": ["Node.js", "Express.js", "React", "Redux", "Sequelize", "PostgreSQL"],
+    "image": "images/WoofBnB.jpg",
+    "websiteUrl": "https://woofbnb.onrender.com"
+  }
+]
+  

@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "Full-Stack Development",
+      "description": "Building scalable web applications with React, Node.js, Flask, and modern databases",
+      "icon": "💻"
+    },
+    {
+      "id": 2,
+      "title": "AI Integration",
+      "description": "Implementing AI-powered features using OpenAI APIs and LLM workflows for enhanced user experiences",
+      "icon": "🤖"
+    },
+    {
+      "id": 3,
+      "title": "Performance Optimization",
+      "description": "System performance tuning, CUDA optimization, and high-concurrency API development",
+      "icon": "⚡"
+    },
+    {
+      "id": 4,
+      "title": "Cloud & DevOps",
+      "description": "AWS deployment, Docker containerization, and scalable cloud infrastructure management",
+      "icon": "☁️"
+    }
+  ]
+  
