@@ -47,7 +47,6 @@ luna-portfolio/
 │   │   │   ├── About/        # About page and components
 │   │   │   ├── Portfolio/    # Portfolio showcase
 │   │   │   ├── Resume/       # Resume page
-│   │   │   ├── Blogs/        # Blog section
 │   │   │   └── Contact/      # Contact form
 │   │   ├── App.jsx           # Main app component
 │   │   ├── App.css           # Global styles
@@ -135,7 +134,6 @@ The built files will be in the `dist` directory.
 
 ## 🔄 Future Enhancements
 
-- [ ] Add blog functionality with markdown support
 - [ ] Integrate with a headless CMS for content management
 - [ ] Add dark/light theme toggle
 - [ ] Implement contact form with backend integration
