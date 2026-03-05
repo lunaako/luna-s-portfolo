@@ -21,17 +21,12 @@ const About = () => {
       </header>
 
       <section className="about-text">
-        <p>
-          Hi there! 👋 I'm Yicheng Wang, a passionate full-stack developer with a unique blend of AI infrastructure experience and web development expertise. Currently pursuing my Master's in Computer Science at CU Boulder while bringing real-world engineering experience from Alibaba Cloud.
-        </p>
-
-        <p>
-          I love building useful tools that solve real problems. Whether it's developing high-performance GPU diagnostic systems, creating AI-powered web applications, or optimizing CUDA kernels, I enjoy turning complex challenges into elegant solutions. My experience spans from low-level system optimization to modern web development with React and AI integration.
-        </p>
-
-        <p>
-          When I'm not coding, you'll find me bouldering or having conversations with AI (sometimes more than with people!). I believe in learning by doing and am always excited to collaborate on interesting projects that can make a meaningful impact.
-        </p>
+        <h3 className="h3 about-subtitle">Our time is precious — here's the quick version:</h3>
+        <ul className="about-highlights">
+          <li>I ship 🚢.</li>
+          <li>I learn fast 🧠.</li>
+          <li>I'm the teammate who gets things done 🧑‍🤝‍🧑.</li>
+        </ul>
       </section>
 
       {/* Service Section */}
@@ -50,7 +45,7 @@ const About = () => {
         </ul>
       </section>
 
-      {/* Experience Highlights */}
+      {/* TODO: Experience Highlights - temporarily hidden, uncomment to restore
       <section className="experience-highlights">
         <h3 className="h3 service-title">Experience Highlights</h3>
         
@@ -80,6 +75,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Technologies */}
       <section className="technologies">
@@ -89,45 +85,40 @@ const About = () => {
           <div className="tech-category">
             <h4>Languages</h4>
             <div className="tech-tags">
-              <span className="tech-tag">JavaScript</span>
               <span className="tech-tag">Python</span>
-              <span className="tech-tag">Go</span>
+              <span className="tech-tag">JavaScript</span>
               <span className="tech-tag">Java</span>
-              <span className="tech-tag">C++</span>
               <span className="tech-tag">SQL</span>
+              <span className="tech-tag">HTML</span>
+              <span className="tech-tag">CSS</span>
+              <span className="tech-tag">Golang</span>
             </div>
           </div>
 
           <div className="tech-category">
-            <h4>Frontend</h4>
+            <h4>Frameworks & Libraries</h4>
             <div className="tech-tags">
+              <span className="tech-tag">Node.js</span>
               <span className="tech-tag">React</span>
               <span className="tech-tag">Redux</span>
-              <span className="tech-tag">Next.js</span>
-              <span className="tech-tag">TypeScript</span>
-              <span className="tech-tag">Tailwind CSS</span>
-            </div>
-          </div>
-
-          <div className="tech-category">
-            <h4>Backend & AI</h4>
-            <div className="tech-tags">
+              <span className="tech-tag">Express</span>
               <span className="tech-tag">Flask</span>
-              <span className="tech-tag">Node.js</span>
-              <span className="tech-tag">FastAPI</span>
-              <span className="tech-tag">OpenAI API</span>
-              <span className="tech-tag">PyTorch</span>
+              <span className="tech-tag">Spring Boot</span>
             </div>
           </div>
 
           <div className="tech-category">
-            <h4>Cloud & DevOps</h4>
+            <h4>Tools</h4>
             <div className="tech-tags">
-              <span className="tech-tag">AWS</span>
               <span className="tech-tag">Docker</span>
-              <span className="tech-tag">Kubernetes</span>
-              <span className="tech-tag">PostgreSQL</span>
-              <span className="tech-tag">MySQL</span>
+              <span className="tech-tag">Git</span>
+              <span className="tech-tag">AWS</span>
+              <span className="tech-tag">Azure</span>
+              <span className="tech-tag">Supabase</span>
+              <span className="tech-tag">Trigger.dev</span>
+              <span className="tech-tag">OpenAI APIs</span>
+              <span className="tech-tag">CI/CD</span>
+              <span className="tech-tag">Linux</span>
             </div>
           </div>
         </div>

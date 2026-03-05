@@ -502,6 +502,41 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
+.about-subtitle {
+  color: var(--light-gray);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-400);
+  margin-bottom: 20px;
+}
+
+.about-highlights {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-highlights li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.about-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--white-2);
+}
+
 
 
 /**
