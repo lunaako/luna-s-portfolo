@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaBookReader, FaRegBookmark, FaAward, FaExternalLinkAlt } from "react-icons/fa";
 import TimelineItem from './TimelineItem';
+import Fireworks from '../../components/Fireworks';
 
 const Resume = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const [showFireworks, setShowFireworks] = useState(false);
+  const [triggered, setTriggered] = useState(false);
+  const bottomRef = useRef(null);
+
+  useEffect(() => {
+    if (triggered) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !triggered) {
+          setTriggered(true);
+          setShowPopup(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (bottomRef.current) observer.observe(bottomRef.current);
+    return () => observer.disconnect();
+  }, [triggered]);
+
+  const handleLaunchFireworks = () => {
+    setShowPopup(false);
+    setShowFireworks(true);
+  };
+
   return (
     <section>
       <header>
@@ -100,6 +126,21 @@ const Resume = () => {
           </a>
         </div>
       </div>
+
+      <div ref={bottomRef} className="resume-bottom-trigger" />
+
+      {showPopup && (
+        <div className="firework-popup-overlay">
+          <div className="firework-popup">
+            <p>Thanks for reading my resume!</p>
+            <button className="firework-popup-btn" onClick={handleLaunchFireworks}>
+              Fireworks Delivering 
+            </button>
+          </div>
+        </div>
+      )}
+
+      <Fireworks active={showFireworks} onFinished={() => setShowFireworks(false)} />
     </section>
   );
 };

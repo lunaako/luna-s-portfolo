@@ -1,16 +1,57 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import Service from "./Service";
+
+const highlights = [
+  "I ship 🚢.",
+  "I learn fast 🧠.",
+  "I'm the teammate who gets things done 🧑‍🤝‍🧑.",
+];
 
 const About = () => {
   const [services, setServices] = useState([]);
+  const [lineIndex, setLineIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [displayedLines, setDisplayedLines] = useState([]);
+  const [done, setDone] = useState(false);
+  const hasRun = useRef(false);
 
   useEffect(() => {
-    // Load services
     fetch('services.json').then(res => res.json()).then(data => {
       setServices(data)
     });
+  }, [])
+
+  useEffect(() => {
+    if (hasRun.current) return;
+    hasRun.current = true;
+
+    let li = 0, ci = 0;
+    const lines = ["", "", ""];
+
+    const tick = () => {
+      if (li >= highlights.length) {
+        setDone(true);
+        return;
+      }
+      const fullText = highlights[li];
+      ci++;
+      lines[li] = fullText.slice(0, ci);
+      setDisplayedLines([...lines]);
+      setLineIndex(li);
+      setCharIndex(ci);
+
+      if (ci >= fullText.length) {
+        li++;
+        ci = 0;
+        setTimeout(tick, 400);
+      } else {
+        setTimeout(tick, 45);
+      }
+    };
+
+    setTimeout(tick, 600);
   }, [])
 
   return (
@@ -23,9 +64,12 @@ const About = () => {
       <section className="about-text">
         <h3 className="h3 about-subtitle">Our time is precious — here's the quick version:</h3>
         <ul className="about-highlights">
-          <li>I ship 🚢.</li>
-          <li>I learn fast 🧠.</li>
-          <li>I'm the teammate who gets things done 🧑‍🤝‍🧑.</li>
+          {highlights.map((line, i) => (
+            <li key={i} className={i <= lineIndex || done ? "typewriter-visible" : "typewriter-hidden"}>
+              {displayedLines[i] || ""}
+              {!done && i === lineIndex && <span className="typewriter-cursor">|</span>}
+            </li>
+          ))}
         </ul>
       </section>
 

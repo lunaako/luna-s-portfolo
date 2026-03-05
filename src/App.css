@@ -526,7 +526,7 @@ main {
   line-height: 1.6;
 }
 
-.about-highlights li::before {
+.about-highlights li.typewriter-visible::before {
   content: "";
   position: absolute;
   left: 0;
@@ -535,6 +535,22 @@ main {
   height: 5px;
   border-radius: 50%;
   background: var(--white-2);
+}
+
+.about-highlights li.typewriter-hidden::before {
+  display: none;
+}
+
+.typewriter-cursor {
+  display: inline;
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-300);
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 
@@ -1129,6 +1145,81 @@ main {
 
 
 
+
+
+
+/*-----------------------------------*\
+  #FIREWORKS EASTER EGG
+\*-----------------------------------*/
+
+.resume-bottom-trigger {
+  height: 1px;
+  width: 100%;
+}
+
+.firework-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: hsla(0, 0%, 0%, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  animation: fade 0.3s ease;
+}
+
+.firework-popup {
+  background: var(--eerie-black-2);
+  border: none;
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: var(--shadow-5);
+  animation: scaleUp 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.firework-popup p {
+  color: var(--white-2);
+  font-size: var(--fs-4);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.firework-popup-btn {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-500);
+  padding: 14px 32px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.firework-popup-btn:hover {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  transform: scale(1.05);
+}
+
+.fireworks-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 30;
+  pointer-events: none;
+}
 
 
 
